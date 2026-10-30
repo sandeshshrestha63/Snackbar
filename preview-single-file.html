@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakulahar Chulo | Modern Nepali food in Chitwan</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Karla:wght@400;500;700&family=Noto+Serif+Devanagari:wght@500;700&display=swap');
+
+:root {
+  --paper: #f2e9d8;
+  --paper-2: #e9dec8;
+  --ink: #2b2019;
+  --ink-soft: #5b4a3d;
+  --terra: #b4522d;
+  --terra-dk: #8f3d1e;
+  --green: #2e4a3b;
+  --green-dk: #213629;
+  --mustard: #d6a240;
+  --line: rgba(43, 32, 25, .22);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Karla', system-ui, sans-serif;
+  --deva: 'Noto Serif Devanagari', serif;
+  --wrap: 1180px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .2  0 0 0 0 .1  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; letter-spacing: -.01em; }
+h1 { font-size: clamp(2.8rem, 6.2vw, 5.4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h3 { font-size: 1.5rem; }
+em { font-style: italic; font-weight: 400; }
+.eyebrow { font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--terra); margin-bottom: 14px; display: block; }
+.deva { font-family: var(--deva); }
+
+/* ---------- header ---------- */
+.site-head { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--line); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.brand { text-decoration: none; display: flex; align-items: baseline; gap: 10px; }
+.brand b { font-family: var(--serif); font-size: 1.55rem; font-weight: 700; }
+.brand span { font-family: var(--deva); font-size: .95rem; color: var(--terra); }
+.nav { display: flex; gap: 6px; align-items: center; }
+.nav a { text-decoration: none; padding: 8px 14px; font-weight: 500; font-size: .98rem; position: relative; }
+.nav a:not(.btn)::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 3px; height: 2px; background: var(--terra); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+.nav a:not(.btn):hover::after, .nav a.on::after { transform: scaleX(1); }
+.burger { display: none; background: none; border: 1px solid var(--ink); border-radius: 4px; padding: 8px 12px; font: inherit; cursor: pointer; }
+
+.btn { display: inline-block; text-decoration: none; padding: 13px 26px; border: 2px solid var(--ink); font-weight: 700; font-size: .95rem; letter-spacing: .02em; border-radius: 3px; transition: transform .15s, box-shadow .15s, background .15s; background: transparent; cursor: pointer; font-family: var(--sans); }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--ink); }
+.btn.solid { background: var(--terra); border-color: var(--terra-dk); color: #fff; }
+.btn.solid:hover { box-shadow: 3px 3px 0 var(--terra-dk); }
+.btn.sm { padding: 8px 18px; }
+
+/* ---------- placeholder art tiles ---------- */
+.tile { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; color: rgba(255,255,255,.92); }
+.tile::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 2px, transparent 2px 14px); }
+.tile .g { font-family: var(--deva); font-weight: 700; font-size: clamp(2rem, 5vw, 4rem); position: relative; text-align: center; line-height: 1.2; padding: 0 10px; text-shadow: 0 2px 0 rgba(0,0,0,.18); }
+.tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tone-terra { background: var(--terra); }
+.tone-green { background: var(--green); }
+.tone-mustard { background: var(--mustard); color: var(--ink); }
+.tone-mustard .g { text-shadow: none; }
+.tile .cap { position: absolute; left: 12px; bottom: 10px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; opacity: .85; }
+
+/* ---------- home hero ---------- */
+.hero { padding: 64px 0 80px; }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+.hero h1 em { color: var(--terra); }
+.hero p.lead { font-size: 1.2rem; max-width: 30em; margin: 24px 0 34px; color: var(--ink-soft); }
+.hero .cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-art { position: relative; }
+.arch { border-radius: 999px 999px 6px 6px; aspect-ratio: 3/4; width: 100%; }
+.arch .g { font-size: clamp(3rem, 7vw, 5.5rem); }
+.stamp { position: absolute; left: -34px; bottom: 46px; width: 124px; height: 124px; border-radius: 50%; background: var(--mustard); color: var(--ink); display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; line-height: 1.35; transform: rotate(-9deg); border: 2px dashed var(--ink); }
+
+.strip { background: var(--green); color: var(--paper); overflow: hidden; border-block: 3px solid var(--ink); }
+.strip div { display: flex; gap: 46px; padding: 16px 0; white-space: nowrap; width: max-content; animation: slide 38s linear infinite; font-family: var(--deva); font-size: 1.35rem; }
+.strip span::after { content: "✦"; margin-left: 46px; color: var(--mustard); font-size: .9rem; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ---------- home sections ---------- */
+section.block { padding: 96px 0; }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 52px; flex-wrap: wrap; }
+.sec-head p { max-width: 26em; color: var(--ink-soft); }
+
+.picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; align-items: start; }
+.pick { text-decoration: none; display: block; }
+.pick:nth-child(2) { margin-top: 56px; }
+.pick:nth-child(3) { margin-top: 18px; }
+.pick .tile { aspect-ratio: 4/5; border-radius: 4px; transition: transform .3s; }
+.pick:nth-child(1) .tile { border-radius: 4px 80px 4px 4px; }
+.pick:nth-child(2) .tile { border-radius: 80px 4px 4px 4px; }
+.pick:hover .tile { transform: rotate(-1.2deg) scale(1.02); }
+.pick h3 { margin-top: 18px; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.pick h3 small { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: var(--terra); }
+.pick p { color: var(--ink-soft); margin-top: 6px; }
+
+.story { background: var(--paper-2); border-block: 1px solid var(--line); }
+.story .wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center; }
+.story .tile { aspect-ratio: 1; border-radius: 50%; max-width: 440px; }
+.story p { margin-top: 20px; max-width: 34em; }
+.story p.big { font-family: var(--serif); font-size: 1.55rem; line-height: 1.4; font-weight: 400; }
+.link-arrow { display: inline-block; margin-top: 26px; font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--terra); padding-bottom: 2px; }
+.link-arrow:hover { color: var(--terra); }
+
+.visit { background: var(--green); color: var(--paper); }
+.visit .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+.visit .eyebrow { color: var(--mustard); }
+.board { border: 2px solid rgba(242,233,216,.5); padding: 34px; border-radius: 4px; outline: 2px solid rgba(242,233,216,.25); outline-offset: 6px; }
+.board dl div { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px dashed rgba(242,233,216,.35); gap: 20px; }
+.board dl div:last-child { border: 0; }
+.board dt { font-family: var(--serif); font-size: 1.15rem; }
+.visit p { margin: 18px 0 28px; opacity: .88; max-width: 28em; }
+.visit .btn { border-color: var(--paper); color: var(--paper); }
+.visit .btn:hover { box-shadow: 3px 3px 0 var(--paper); }
+.visit .btn.solid { background: var(--mustard); color: var(--ink); border-color: var(--mustard); }
+
+/* ---------- footer ---------- */
+.site-foot { background: var(--ink); color: var(--paper-2); padding: 64px 0 28px; }
+.site-foot .cols { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; }
+.site-foot h4 { font-family: var(--serif); color: #fff; font-size: 1.25rem; margin-bottom: 12px; font-weight: 600; }
+.site-foot a { text-decoration: none; opacity: .85; }
+.site-foot a:hover { opacity: 1; color: var(--mustard); }
+.site-foot li { list-style: none; margin: 6px 0; }
+.site-foot .fine { margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.15); font-size: .85rem; opacity: .7; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- page header (inner pages) ---------- */
+.page-top { padding: 70px 0 40px; border-bottom: 1px solid var(--line); }
+.page-top .wrap { display: flex; justify-content: space-between; align-items: end; gap: 40px; flex-wrap: wrap; }
+.page-top p { max-width: 28em; color: var(--ink-soft); }
+
+/* ---------- about ---------- */
+.about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; padding-block: 80px; align-items: start; }
+.about-grid .tile { aspect-ratio: 4/5; border-radius: 4px; position: sticky; top: 110px; }
+.about-grid .tile.b { aspect-ratio: 16/10; position: static; margin-top: 30px; border-radius: 4px 4px 80px 4px; }
+.prose p { margin-bottom: 20px; max-width: 36em; }
+.prose p:first-of-type::first-letter { font-family: var(--serif); font-weight: 700; font-size: 4.4rem; float: left; line-height: .8; padding: 8px 12px 0 0; color: var(--terra); }
+.rules { background: var(--paper-2); border-block: 1px solid var(--line); padding: 84px 0; }
+.rules ol { list-style: none; counter-reset: r; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 44px; }
+.rules li { counter-increment: r; border-top: 3px solid var(--ink); padding-top: 18px; }
+.rules li::before { content: "0" counter(r); font-family: var(--serif); font-size: 3.4rem; color: var(--terra); display: block; line-height: 1; margin-bottom: 10px; }
+.rules li h3 { margin-bottom: 8px; }
+.rules li p { color: var(--ink-soft); }
+.pull { padding: 100px 0; text-align: center; }
+.pull blockquote { font-family: var(--serif); font-size: clamp(1.7rem, 3.4vw, 2.6rem); max-width: 22em; margin: 0 auto; line-height: 1.25; font-weight: 400; }
+.pull blockquote em { color: var(--terra); }
+
+/* ---------- menu page ---------- */
+.menu-tabs { position: sticky; top: 76px; z-index: 40; background: var(--paper); border-bottom: 1px solid var(--line); }
+.menu-tabs .wrap { display: flex; gap: 8px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
+.menu-tabs a { white-space: nowrap; text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--line); border-radius: 40px; font-weight: 500; font-size: .93rem; }
+.menu-tabs a:hover, .menu-tabs a.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.menu-cat { padding: 64px 0 10px; scroll-margin-top: 140px; }
+.menu-cat > .wrap { display: grid; grid-template-columns: 240px 1fr; gap: 56px; }
+.menu-cat h2 { font-size: 2.2rem; }
+.menu-cat .np { font-family: var(--deva); color: var(--terra); font-size: 1.2rem; margin-top: 6px; }
+.dish { display: flex; align-items: baseline; gap: 10px; text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.dish:first-child { padding-top: 0; }
+.dish .nm { font-family: var(--serif); font-size: 1.28rem; font-weight: 600; white-space: nowrap; }
+.dish .lead-dots { flex: 1; border-bottom: 2px dotted var(--ink-soft); opacity: .45; transform: translateY(-5px); min-width: 20px; }
+.dish .pr { font-weight: 700; white-space: nowrap; }
+.dish-wrap { display: block; }
+.dish-wrap p { font-size: .95rem; color: var(--ink-soft); max-width: 36em; margin-top: -6px; padding-bottom: 14px; }
+.dish-item { border-bottom: 1px solid var(--line); padding: 16px 0 14px; text-decoration: none; display: block; }
+.dish-item:first-child { padding-top: 0; }
+.dish-item .row { display: flex; align-items: baseline; gap: 10px; }
+.dish-item .nm { font-family: var(--serif); font-size: 1.28rem; font-weight: 600; }
+.dish-item .lead-dots { flex: 1; border-bottom: 2px dotted var(--ink-soft); opacity: .45; transform: translateY(-5px); }
+.dish-item .pr { font-weight: 700; }
+.dish-item p { font-size: .96rem; color: var(--ink-soft); margin-top: 4px; max-width: 36em; }
+.dish-item:hover .nm { color: var(--terra); }
+.dish-item .more { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--terra); font-weight: 700; opacity: 0; transition: opacity .2s; }
+.dish-item:hover .more { opacity: 1; }
+.heat { display: inline-flex; gap: 3px; vertical-align: middle; margin-left: 6px; }
+.heat i { width: 7px; height: 7px; border-radius: 50%; background: var(--terra); }
+.heat i.off { background: transparent; border: 1px solid var(--ink-soft); opacity: .5; }
+.note { text-align: center; color: var(--ink-soft); padding-block: 60px 90px; font-size: .95rem; }
+
+/* ---------- gallery ---------- */
+.masonry { columns: 3; column-gap: 22px; padding: 64px 0 100px; }
+.masonry figure { break-inside: avoid; margin-bottom: 22px; cursor: zoom-in; }
+.masonry .tile { width: 100%; border-radius: 3px; transition: transform .3s; }
+.masonry figure:nth-child(3n+1) .tile { border-radius: 3px 40px 3px 3px; }
+.masonry figure:nth-child(3n+2) .tile { border-radius: 40px 3px 3px 3px; }
+.masonry figure:hover .tile { transform: rotate(-.8deg); }
+.masonry figcaption { font-size: .88rem; color: var(--ink-soft); padding: 8px 2px 0; font-style: italic; font-family: var(--serif); }
+.lightbox { position: fixed; inset: 0; background: rgba(33,24,18,.92); z-index: 100; display: none; align-items: center; justify-content: center; padding: 30px; }
+.lightbox.open { display: flex; }
+.lightbox .tile { width: min(760px, 90vw); height: min(70vh, 560px); border-radius: 6px; }
+.lightbox button { position: absolute; top: 20px; right: 26px; background: none; border: 0; color: #fff; font-size: 2.2rem; cursor: pointer; }
+.lightbox .lb-cap { position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; color: #fff; font-family: var(--serif); font-style: italic; }
+
+/* ---------- contact ---------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; padding-block: 76px 40px; }
+.contact-list > div { padding: 24px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 120px 1fr; gap: 14px; }
+.contact-list > div:first-child { padding-top: 0; }
+.contact-list h3 { font-family: var(--sans); font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--terra); font-weight: 700; padding-top: 5px; }
+.contact-list p, .contact-list a { font-size: 1.15rem; font-family: var(--serif); }
+.contact-list .btn { margin-top: 14px; font-family: var(--sans); font-size: .92rem; }
+.contact-list .btns { grid-column: 2; display: flex; gap: 10px; flex-wrap: wrap; }
+.mapbox { border: 2px solid var(--ink); border-radius: 4px; overflow: hidden; min-height: 460px; box-shadow: 10px 10px 0 var(--green); background: var(--paper-2); }
+.mapbox iframe { width: 100%; height: 100%; min-height: 460px; border: 0; filter: sepia(.35) saturate(.85); }
+.getting { padding-block: 30px 100px; }
+.getting .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 30px; }
+.getting .cols div { background: var(--paper-2); padding: 26px; border-radius: 4px; border-left: 4px solid var(--mustard); }
+.getting h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.getting p { color: var(--ink-soft); font-size: .98rem; }
+
+/* ---------- item detail ---------- */
+.crumbs { padding: 28px 0 0; font-size: .9rem; color: var(--ink-soft); }
+.crumbs a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.item { display: grid; grid-template-columns: 1.05fr 1fr; gap: 70px; padding: 36px 0 90px; align-items: start; }
+.item .tile { aspect-ratio: 1; border-radius: 6px 120px 6px 6px; position: sticky; top: 110px; }
+.item .tile .g { font-size: clamp(3rem, 7vw, 5.5rem); }
+.item h1 { font-size: clamp(2.4rem, 4.8vw, 4rem); margin-bottom: 12px; }
+.item .meta { display: flex; gap: 22px; align-items: center; margin: 18px 0 26px; flex-wrap: wrap; }
+.item .price { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--terra); }
+.item .price small { font-size: .9rem; font-family: var(--sans); color: var(--ink-soft); font-weight: 400; margin-right: 4px; }
+.item .spice { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; padding: 6px 12px; border: 1.5px solid var(--ink); border-radius: 30px; }
+.item .intro { font-size: 1.2rem; font-family: var(--serif); line-height: 1.45; margin-bottom: 22px; }
+.item h2 { font-size: 1.4rem; margin: 34px 0 12px; }
+.inside li { list-style: none; padding: 9px 0 9px 26px; border-bottom: 1px dashed var(--line); position: relative; }
+.inside li::before { content: "✦"; position: absolute; left: 0; color: var(--mustard); font-size: .8rem; top: 13px; }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+.pairs a { display: flex; align-items: center; gap: 14px; text-decoration: none; border: 1.5px solid var(--ink); padding: 10px 14px 10px 10px; border-radius: 4px; transition: transform .15s, box-shadow .15s; }
+.pairs a:hover { transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--ink); }
+.pairs .tile { width: 52px; height: 52px; border-radius: 50%; flex: none; }
+.pairs .tile .g { font-size: .8rem; padding: 0; }
+.pairs b { font-family: var(--serif); display: block; line-height: 1.2; }
+.pairs span { font-size: .85rem; color: var(--ink-soft); }
+.pn { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding: 28px 0 70px; gap: 20px; }
+.pn a { text-decoration: none; font-family: var(--serif); font-size: 1.2rem; max-width: 45%; }
+.pn a small { display: block; font-family: var(--sans); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); font-weight: 700; }
+.pn a:hover b { text-decoration: underline; }
+.pn .r { text-align: right; margin-left: auto; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 920px) {
+  .hero .wrap, .story .wrap, .visit .wrap, .about-grid, .contact-grid, .item { grid-template-columns: 1fr; gap: 40px; }
+  .picks { grid-template-columns: 1fr; }
+  .pick:nth-child(n) { margin-top: 0; }
+  .stamp { left: 10px; }
+  .menu-cat > .wrap { grid-template-columns: 1fr; gap: 20px; }
+  .rules ol, .getting .cols { grid-template-columns: 1fr; }
+  .masonry { columns: 2; }
+  .about-grid .tile, .item .tile { position: static; }
+  .site-foot .cols { grid-template-columns: 1fr; gap: 30px; }
+  .story .tile { max-width: 320px; }
+  .burger { display: block; }
+  .nav { position: absolute; top: 76px; left: 0; right: 0; background: var(--paper); flex-direction: column; align-items: stretch; padding: 10px 28px 24px; border-bottom: 1px solid var(--line); display: none; }
+  .nav.open { display: flex; }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .nav a::after { display: none; }
+  .nav .btn { margin-top: 12px; text-align: center; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .masonry { columns: 1; }
+  .contact-list > div { grid-template-columns: 1fr; gap: 4px; }
+  .contact-list .btns { grid-column: 1; }
+  .pairs { grid-template-columns: 1fr; }
+  .brand span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .strip div { animation: none; } * { transition: none !important; } }
+
+
+.mapcard{display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;background:
+ repeating-linear-gradient(0deg,rgba(43,32,25,.06) 0 1px,transparent 1px 38px),repeating-linear-gradient(90deg,rgba(43,32,25,.06) 0 1px,transparent 1px 38px),var(--paper-2)}
+.mapcard h3{margin-bottom:10px}.mapcard p{max-width:22em;margin:0 auto 22px;color:var(--ink-soft)}
+.view{display:none}.view.show{display:block}
+
+</style></head><body>
+<div id="site-head"></div>
+<div class="view" id="v-home"><section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Bakulahar, Chitwan</span>
+      <h1>Nepali food, <em>cooked</em> over a real fire.</h1>
+      <p class="lead">Old recipes from Terai kitchens and the hills, made by people who still believe the best flavour comes from charcoal, mustard oil and patience.</p>
+      <div class="cta">
+        <a class="btn solid" href="#menu">See the menu</a>
+        <a class="btn" href="#contact">Find us</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="tile tone-terra arch"><span class="g">चुलो</span></div>
+      <div class="stamp">Cooked<br>on<br>charcoal</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" id="strip" aria-hidden="true"></div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Start here</span><h2>Three plates people<br>keep coming back for</h2></div>
+      <p>If it is your first visit, order one of these and let the table sort out the rest.</p>
+    </div>
+    <div class="picks" id="picks"></div>
+    <p style="margin-top:56px"><a class="link-arrow" href="#menu">The full menu</a></p>
+  </div>
+</section>
+
+<section class="block story">
+  <div class="wrap">
+    <div class="tile tone-green"><span class="g">घर<br>जस्तै</span></div>
+    <div>
+      <span class="eyebrow">About the kitchen</span>
+      <p class="big">A chulo is the clay hearth every Nepali home was built around. We named the restaurant after it, and then we cooked on one.</p>
+      <p>The menu is short and it changes with what the market has. We make our own pickles, our own curd and our own gundruk, and we do not hide the kitchen from you.</p>
+      <a class="link-arrow" href="#about">Read our story</a>
+    </div>
+  </div>
+</section>
+
+<section class="block visit">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Come by</span>
+      <h2>The fire is lit<br>from mid morning.</h2>
+      <p>Walk in, sit wherever you like. For a group of more than eight, a quick phone call helps the kitchen plan.</p>
+      <a class="btn solid" href="#contact">Directions and contact</a>
+    </div>
+    <div class="board"><dl data-hours></dl></div>
+  </div>
+</section></div>
+<div class="view" id="v-menu"><div class="page-top"><div class="wrap">
+  <div><span class="eyebrow">What we cook</span><h1>The Menu</h1></div>
+  <p>Tap any dish to see what goes into it. Prices are in Nepali rupees. Ask us about spice, we can go either way.</p>
+</div></div>
+<div class="menu-tabs" id="menu-tabs"></div>
+<div id="menu-root"></div>
+<p class="note wrap">Prices and dishes may change with the season. Some dishes can be made vegetarian, just ask.</p></div>
+<div class="view" id="v-about"><div class="page-top"><div class="wrap">
+  <div><span class="eyebrow">Our story</span><h1>Started at<br>a hearth.</h1></div>
+  <p>A small restaurant in Bakulahar with a big opinion about charcoal.</p>
+</div></div>
+
+<div class="wrap about-grid">
+  <div>
+    <div class="tile tone-terra"><span class="g">आगो</span></div>
+  </div>
+  <div class="prose">
+    <p>Growing up around Chitwan, the best meals were never in restaurants. They were at somebody's aunt's house, on a clay chulo, with a pot that had been used for thirty years and a cook who never measured anything.</p>
+    <p>We wanted to bring that table to the road. Not a museum version of Nepali food, and not a fusion menu with a Nepali name stuck on it. Just the dishes we grew up with, cooked with a bit more care and served with a bit more light.</p>
+    <p>That is why the kitchen is built around a real wood and charcoal hearth. It is slower, hotter and harder to control than gas. It is also the only way to get the skin on the chulo chicken right, and the only way to get the smoke into the sekuwa.</p>
+    <p>We buy from farms and markets close by wherever we can. The curd comes from a neighbour. The greens come from the field behind the kitchen when the season allows. When something is not good that week, it comes off the menu.</p>
+    <div class="tile tone-green b"><span class="g">भान्सा</span></div>
+  </div>
+</div>
+
+<section class="rules">
+  <div class="wrap">
+    <span class="eyebrow">House rules</span>
+    <h2>Three things we<br>will not change</h2>
+    <ol>
+      <li><h3>Fire, not shortcuts</h3><p>If a dish is meant to be cooked over coals, it is cooked over coals. No smoke flavouring, no tricks.</p></li>
+      <li><h3>Make it ourselves</h3><p>Pickles, curd, gundruk, spice blends. Anything we can make in the kitchen, we do.</p></li>
+      <li><h3>Feed people properly</h3><p>Dal refills are free. Portions are generous. Nobody leaves hungry, and nobody gets rushed.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="pull"><div class="wrap">
+  <blockquote>Good food is mostly <em>time</em>, a hot fire, and someone who cares whether you finish your plate.</blockquote>
+</div></section></div>
+<div class="view" id="v-gallery"><div class="page-top"><div class="wrap">
+  <div><span class="eyebrow">A look inside</span><h1>Gallery</h1></div>
+  <p>The kitchen before service, the plates as they leave it, and the garden at the back.</p>
+</div></div>
+<div class="wrap"><div class="masonry" id="gallery-root"></div></div>
+<div class="lightbox" id="lightbox"><button aria-label="Close">&times;</button><div class="slot"></div><div class="lb-cap"></div></div></div>
+<div class="view" id="v-contact"><div class="page-top"><div class="wrap">
+  <div><span class="eyebrow">Come and eat</span><h1>Find us</h1></div>
+  <p>We are easiest to reach by phone. If you are driving, the map below will get you to the door.</p>
+</div></div>
+
+<div class="wrap contact-grid">
+  <div class="contact-list">
+    <div><h3>Address</h3><div><p id="addr">Bakulahar<br>Chitwan, Nepal</p></div>
+      <div class="btns"><a class="btn solid sm" data-directions href="#" target="_blank" rel="noopener">Get directions</a></div></div>
+    <div><h3>Phone</h3><div><p><a href="tel:+97798XXXXXXXX">+977 98XXXXXXXX</a></p></div>
+      <div class="btns"><a class="btn sm" href="tel:+97798XXXXXXXX">Call now</a></div></div>
+    <div><h3>Email</h3><div><p><a href="mailto:hello@bakulaharchulo.com">hello@bakulaharchulo.com</a></p></div></div>
+    <div><h3>Hours</h3><div><dl data-hours style="font-family:var(--serif);font-size:1.15rem"></dl></div></div>
+  </div>
+  <div class="mapbox mapcard"><div><span class="eyebrow">On the map</span><h3>Bakulahar, Chitwan</h3><p>Open the live map for turn by turn directions from wherever you are.</p><a class="btn solid" data-directions href="#" target="_blank" rel="noopener">Open in Google Maps</a></div></div>
+</div>
+
+<section class="getting wrap">
+  <h2>Getting here</h2>
+  <div class="cols">
+    <div><h3>By car or bike</h3><p>Parking is available beside the restaurant. Evenings fill up, so come a little early at weekends.</p></div>
+    <div><h3>Coming from the park</h3><p>We are a short ride from the main tourist strip. Any local driver will know Bakulahar.</p></div>
+    <div><h3>Groups and events</h3><p>Planning a family meal or a small celebration? Call us a day ahead and we will set up the long table.</p></div>
+  </div>
+</section></div>
+<div class="view" id="v-item"><main id="item-root"></main></div>
+<div id="site-foot"></div><script>/* Edit this file to change the restaurant details and the whole menu.
+   Every page reads from here. Add "img": "assets/photos/xyz.jpg" to an item to show a real photo. */
+
+window.SITE = {
+  name: "Bakulahar Chulo",
+  short: "Chulo",
+  tagline: "Modern Nepali food, cooked over a real fire.",
+  phone: "+977 98XXXXXXXX",
+  phoneRaw: "+97798XXXXXXXX",
+  email: "hello@bakulaharchulo.com",
+  address: ["Bakulahar", "Chitwan, Nepal"],
+  mapQuery: "Bakulahar, Chitwan, Nepal",
+  hours: [
+    ["Sunday to Friday", "10:00 am to 9:30 pm"],
+    ["Saturday", "9:00 am to 10:00 pm"]
+  ],
+  social: { instagram: "#", facebook: "#" }
+};
+
+window.CATEGORIES = [
+  { id: "starters", name: "Starters", np: "सुरुवात" },
+  { id: "chulo", name: "From the Chulo", np: "चुलोबाट" },
+  { id: "thali", name: "Thali and Sets", np: "थाली" },
+  { id: "sides", name: "Sides", np: "साइड" },
+  { id: "sweet", name: "Something Sweet", np: "गुलियो" },
+  { id: "drinks", name: "Drinks", np: "पेय" }
+];
+
+/* spice: 0 to 3.  glyph is the Nepali word shown on the placeholder tile. */
+window.MENU = [
+  {
+    id: "buff-momo", cat: "starters", name: "Jhol Momo", glyph: "झोल मोमो", price: 280, spice: 2, tone: "terra",
+    desc: "Hand pleated dumplings floating in a warm sesame and tomato soup.",
+    story: "The jhol is made fresh each morning from roasted tomato, sesame, timur and a little roasted soybean flour. The dumplings are folded to order, so they arrive soft, never dried out.",
+    inside: ["Minced filling, chicken or vegetable", "Roasted sesame and tomato jhol", "Timur (Sichuan pepper)", "Fresh coriander"],
+    pair: ["spiced-chiya", "achar-plate"]
+  },
+  {
+    id: "sekuwa-skewers", cat: "starters", name: "Sekuwa Skewers", glyph: "सेकुवा", price: 340, spice: 2, tone: "green",
+    desc: "Marinated pieces roasted on the open charcoal, finished with lemon and onion.",
+    story: "Sekuwa is a street food at heart. We keep the marinade short and honest: ginger, garlic, mustard oil, cumin and a little chili. The charcoal does the rest.",
+    inside: ["Ginger and garlic marinade", "Mustard oil", "Charred onion and lemon", "Mint chutney on the side"],
+    pair: ["aila-shot", "dhido-set"]
+  },
+  {
+    id: "chatamari", cat: "starters", name: "Chatamari", glyph: "चटमरी", price: 260, spice: 1, tone: "mustard",
+    desc: "A thin rice crepe from the Newari kitchen, topped with minced meat and egg.",
+    story: "People call it Nepali pizza, which sells it short. The rice batter is spread thin and cooked on a flat griddle until the edges go lacy.",
+    inside: ["Rice flour crepe", "Spiced minced topping", "Egg", "Fresh tomato and coriander"],
+    pair: ["spiced-chiya", "achar-plate"]
+  },
+  {
+    id: "chulo-chicken", cat: "chulo", name: "Chulo Chicken", glyph: "चुलो कुखुरा", price: 520, spice: 2, tone: "terra",
+    desc: "Whole leg quarter, slow cooked over embers with mustard oil and fenugreek.",
+    story: "This is the dish the restaurant is named after. It sits on the coals for close to an hour, turned by hand, until the skin is dark and the meat comes off the bone without a fight.",
+    inside: ["Free range chicken leg quarter", "Mustard oil and fenugreek", "Garlic, ginger, black cardamom", "Served with roasted potato"],
+    pair: ["dhido-set", "aila-shot"]
+  },
+  {
+    id: "wild-boar-curry", cat: "chulo", name: "Pork Bhutuwa", glyph: "भुटुवा", price: 560, spice: 3, tone: "green",
+    desc: "Dry fried pork with whole spices, ginger and green chili. Not a shy dish.",
+    story: "Bhutuwa means fried, and it is cooked hot and fast in an iron kadai. The ginger goes in late so it stays sharp.",
+    inside: ["Pork belly", "Ginger and green chili", "Timur and cumin", "Spring onion"],
+    pair: ["steamed-rice", "aila-shot"]
+  },
+  {
+    id: "fish-tarkari", cat: "chulo", name: "River Fish Tarkari", glyph: "माछा", price: 480, spice: 2, tone: "mustard",
+    desc: "Fresh water fish in a turmeric and tomato gravy, the way it is cooked in Terai homes.",
+    story: "A lighter curry with a bit of sourness from tomato and a squeeze of lemon at the end. Best eaten with plain rice and something fried on the side.",
+    inside: ["Fresh water fish", "Turmeric and tomato gravy", "Methi and mustard seeds", "Lemon"],
+    pair: ["steamed-rice", "papad-crunch"]
+  },
+  {
+    id: "dhido-set", cat: "thali", name: "Dhido Set", glyph: "ढिंडो", price: 450, spice: 1, tone: "green",
+    desc: "Buckwheat dhido with gundruk soup, seasonal greens and a spoon of ghee.",
+    story: "Dhido is stirred in a pot until it turns thick and glossy, and it is meant to be eaten with your hand. Gundruk is fermented greens, tangy and deep, and we make ours in house.",
+    inside: ["Buckwheat dhido", "Gundruk soup", "Seasonal saag", "Ghee, achar and a boiled egg"],
+    pair: ["spiced-chiya", "achar-plate"]
+  },
+  {
+    id: "thakali-thali", cat: "thali", name: "Bakulahar Thali", glyph: "थाली", price: 620, spice: 2, tone: "terra",
+    desc: "Rice, dal, two curries, saag, papad and achar on a steel plate. Refills of dal are free.",
+    story: "The one to order if it is your first visit. Everything on the plate changes slightly with the season, but the dal never does.",
+    inside: ["Steamed rice", "Black lentil dal", "Chicken or vegetable curry", "Saag, papad, pickles"],
+    pair: ["lassi", "papad-crunch"]
+  },
+  {
+    id: "steamed-rice", cat: "sides", name: "Steamed Rice", glyph: "भात", price: 90, spice: 0, tone: "mustard",
+    desc: "Local rice, cooked fresh and kept warm.",
+    story: "Simple on purpose. A bowl of rice is what lets the curries speak.",
+    inside: ["Local rice"],
+    pair: ["fish-tarkari", "wild-boar-curry"]
+  },
+  {
+    id: "achar-plate", cat: "sides", name: "Achar Plate", glyph: "अचार", price: 140, spice: 2, tone: "terra",
+    desc: "Three house pickles: tomato, radish and sesame with timur.",
+    story: "A small plate, but people argue over it. Ask for the extra one if you like heat.",
+    inside: ["Tomato achar", "Radish achar", "Sesame and timur achar"],
+    pair: ["dhido-set", "buff-momo"]
+  },
+  {
+    id: "papad-crunch", cat: "sides", name: "Masala Papad", glyph: "पापड", price: 110, spice: 1, tone: "green",
+    desc: "Crisp papad with chopped onion, tomato and coriander.",
+    story: "A table opener, mostly. It disappears faster than the rest.",
+    inside: ["Roasted papad", "Onion, tomato, coriander", "Lemon and chaat masala"],
+    pair: ["lassi", "fish-tarkari"]
+  },
+  {
+    id: "sel-roti", cat: "sweet", name: "Sel Roti and Kheer", glyph: "सेल रोटी", price: 240, spice: 0, tone: "mustard",
+    desc: "A ring of sweet rice bread, fried golden, with a small bowl of rice pudding.",
+    story: "Sel roti is a festival food, made at Tihar and weddings. We make it every day because it seemed unfair to wait.",
+    inside: ["Rice flour sel roti", "Cardamom kheer", "Crushed pistachio"],
+    pair: ["spiced-chiya"]
+  },
+  {
+    id: "juju-dhau", cat: "sweet", name: "Juju Dhau", glyph: "जुजु धौ", price: 200, spice: 0, tone: "terra",
+    desc: "Thick, set curd in a clay pot, sweet and slightly caramelised.",
+    story: "The king of curds, from Bhaktapur. Ours is set in small clay pots and eaten with a spoon you will not want to put down.",
+    inside: ["Buffalo milk curd", "Sugar", "Cardamom"],
+    pair: ["spiced-chiya"]
+  },
+  {
+    id: "spiced-chiya", cat: "drinks", name: "Masala Chiya", glyph: "चिया", price: 90, spice: 1, tone: "mustard",
+    desc: "Milk tea boiled with ginger, cardamom and black pepper.",
+    story: "We boil it properly, on the stove, for as long as it takes.",
+    inside: ["Tea leaves", "Milk", "Ginger, cardamom, black pepper"],
+    pair: ["sel-roti", "chatamari"]
+  },
+  {
+    id: "lassi", cat: "drinks", name: "Chulo Lassi", glyph: "लस्सी", price: 160, spice: 0, tone: "green",
+    desc: "Thick curd lassi, plain, salted or with a spoon of honey.",
+    story: "Made from the same curd as the juju dhau, so it is rich and a little sour.",
+    inside: ["Fresh curd", "Honey or salt", "Crushed ice"],
+    pair: ["thakali-thali", "papad-crunch"]
+  },
+  {
+    id: "aila-shot", cat: "drinks", name: "Aila Flight", glyph: "आइला", price: 380, spice: 0, tone: "terra",
+    desc: "Three small pours of traditional distilled spirit, served with roasted soybeans.",
+    story: "Aila is a home distilled grain spirit from the hills. We pour it neat and slow, alongside a bowl of bhatmas to chew between sips.",
+    inside: ["Three small pours", "Roasted soybeans (bhatmas)"],
+    pair: ["sekuwa-skewers", "chulo-chicken"]
+  }
+];
+
+window.GALLERY = [
+  { label: "Coals before service", glyph: "आगो", tone: "terra", h: 360 },
+  { label: "Jhol momo", glyph: "मोमो", tone: "green", h: 260 },
+  { label: "The long table", glyph: "टेबल", tone: "mustard", h: 300 },
+  { label: "Sekuwa on the grill", glyph: "सेकुवा", tone: "terra", h: 420 },
+  { label: "Clay pot dhau", glyph: "धौ", tone: "mustard", h: 240 },
+  { label: "Morning prep", glyph: "बिहान", tone: "green", h: 340 },
+  { label: "Dhido set", glyph: "ढिंडो", tone: "terra", h: 280 },
+  { label: "Back garden", glyph: "बगैंचा", tone: "green", h: 380 },
+  { label: "Masala chiya", glyph: "चिया", tone: "mustard", h: 250 }
+];
+</script><script>
+(function () {
+  var S = window.SITE, MENU = window.MENU, CATS = window.CATEGORIES;
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  window.tile = function (o, cls, caption) {
+    return '<div class="tile tone-' + (o.tone || 'terra') + ' ' + (cls || '') + '">' +
+      (o.img ? '<img src="' + esc(o.img) + '" alt="' + esc(o.name || o.label || '') + '">' : '<span class="g">' + esc(o.glyph || '') + '</span>') +
+      (caption ? '<span class="cap">' + esc(caption) + '</span>' : '') + '</div>';
+  };
+  window.heat = function (n) {
+    var h = '<span class="heat" aria-label="Spice level ' + n + ' of 3">';
+    for (var i = 1; i <= 3; i++) h += '<i class="' + (i <= n ? '' : 'off') + '"></i>';
+    return h + '</span>';
+  };
+  window.byId = function (id) { return MENU.filter(function (m) { return m.id === id; })[0]; };
+
+  var links = [['#home', 'Home'], ['#menu', 'Menu'], ['#about', 'Our Story'], ['#gallery', 'Gallery'], ['#contact', 'Find Us']];
+  var nav = links.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join('');
+  document.getElementById('site-head').innerHTML =
+    '<header class="site-head"><div class="wrap"><a class="brand" href="#home"><b>' + esc(S.name) + '</b><span class="deva">बकुलहर चुलो</span></a>' +
+    '<button class="burger" aria-label="Menu" onclick="document.querySelector(\'.nav\').classList.toggle(\'open\')">Menu</button>' +
+    '<nav class="nav">' + nav + '<a class="btn sm" href="tel:' + S.phoneRaw + '">Call us</a></nav></div></header>';
+  document.getElementById('site-foot').innerHTML =
+    '<footer class="site-foot"><div class="wrap"><div class="cols">' +
+    '<div><h4>' + esc(S.name) + '</h4><p>' + esc(S.tagline) + '</p><p style="margin-top:14px">' + S.address.join('<br>') + '</p></div>' +
+    '<div><h4>Look around</h4><ul>' + links.map(function (l) { return '<li><a href="' + l[0] + '">' + l[1] + '</a></li>'; }).join('') + '</ul></div>' +
+    '<div><h4>Say hello</h4><ul><li>' + esc(S.phone) + '</li><li>' + esc(S.email) + '</li></ul></div></div>' +
+    '<div class="fine"><span>&copy; ' + new Date().getFullYear() + ' ' + esc(S.name) + '</span><span>Chitwan, Nepal</span></div></div></footer>';
+
+  document.getElementById('picks').innerHTML = ['chulo-chicken', 'buff-momo', 'dhido-set'].map(function (id) {
+    var m = byId(id);
+    return '<a class="pick" href="#dish-' + m.id + '">' + tile(m) + '<h3>' + esc(m.name) + '<small>Rs ' + m.price + '</small></h3><p>' + esc(m.desc) + '</p></a>';
+  }).join('');
+  var words = MENU.map(function (m) { return '<span>' + esc(m.glyph) + '</span>'; }).join('');
+  document.getElementById('strip').innerHTML = '<div>' + words + words + '</div>';
+  document.querySelectorAll('[data-hours]').forEach(function (el) {
+    el.innerHTML = S.hours.map(function (h) { return '<div><dt>' + h[0] + '</dt><dd>' + h[1] + '</dd></div>'; }).join('');
+  });
+  document.querySelectorAll('[data-directions]').forEach(function (a) { a.href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(S.mapQuery); });
+
+  /* menu */
+  var tabs = document.getElementById('menu-tabs');
+  tabs.innerHTML = '<div class="wrap">' + CATS.map(function (c) { return '<a href="#menu" data-go="' + c.id + '">' + c.name + '</a>'; }).join('') + '</div>';
+  document.getElementById('menu-root').innerHTML = CATS.map(function (c) {
+    var items = MENU.filter(function (m) { return m.cat === c.id; }).map(function (m) {
+      return '<a class="dish-item" href="#dish-' + m.id + '"><div class="row"><span class="nm">' + esc(m.name) + heat(m.spice) + '</span><span class="lead-dots"></span><span class="pr">Rs ' + m.price + '</span></div><p>' + esc(m.desc) + ' <span class="more">See details</span></p></a>';
+    }).join('');
+    return '<section class="menu-cat" id="cat-' + c.id + '"><div class="wrap"><div><h2>' + c.name + '</h2><div class="np">' + c.np + '</div></div><div>' + items + '</div></div></section>';
+  }).join('');
+  var tabLinks = tabs.querySelectorAll('a');
+  tabLinks.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var el = document.getElementById('cat-' + a.getAttribute('data-go'));
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 140, behavior: 'smooth' });
+    });
+  });
+  window.addEventListener('scroll', function () {
+    if (!document.getElementById('v-menu').classList.contains('show')) return;
+    var cur = CATS[0].id;
+    CATS.forEach(function (c) { if (document.getElementById('cat-' + c.id).getBoundingClientRect().top < 180) cur = c.id; });
+    tabLinks.forEach(function (a) { a.classList.toggle('on', a.getAttribute('data-go') === cur); });
+  }, { passive: true });
+
+  /* gallery */
+  var gal = document.getElementById('gallery-root'), lb = document.getElementById('lightbox');
+  gal.innerHTML = window.GALLERY.map(function (g, i) {
+    return '<figure data-i="' + i + '"><div class="tile tone-' + g.tone + '" style="height:' + g.h + 'px">' +
+      (g.img ? '<img src="' + esc(g.img) + '" alt="' + esc(g.label) + '">' : '<span class="g">' + esc(g.glyph) + '</span>') + '</div><figcaption>' + esc(g.label) + '</figcaption></figure>';
+  }).join('');
+  gal.addEventListener('click', function (e) {
+    var f = e.target.closest('figure'); if (!f) return;
+    var g = window.GALLERY[+f.getAttribute('data-i')];
+    lb.querySelector('.slot').innerHTML = tile({ glyph: g.glyph, tone: g.tone, img: g.img, name: g.label });
+    lb.querySelector('.lb-cap').textContent = g.label; lb.classList.add('open');
+  });
+  lb.addEventListener('click', function () { lb.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+  /* item */
+  function renderItem(id) {
+    var idx = MENU.map(function (m) { return m.id; }).indexOf(id); if (idx < 0) idx = 0;
+    var m = MENU[idx], cat = CATS.filter(function (c) { return c.id === m.cat; })[0];
+    var labels = ['Mild', 'Gentle heat', 'Properly spicy', 'Very hot'];
+    var prev = MENU[(idx + MENU.length - 1) % MENU.length], next = MENU[(idx + 1) % MENU.length];
+    document.getElementById('item-root').innerHTML =
+      '<div class="wrap"><div class="crumbs"><a href="#menu">Menu</a> / ' + esc(cat.name) + ' / ' + esc(m.name) + '</div>' +
+      '<article class="item">' + tile(m, '', cat.name) +
+      '<div><span class="eyebrow">' + esc(cat.name) + '</span><h1>' + esc(m.name) + '</h1>' +
+      '<div class="meta"><span class="price"><small>Rs</small>' + m.price + '</span><span class="spice">' + labels[m.spice] + heat(m.spice) + '</span></div>' +
+      '<p class="intro">' + esc(m.desc) + '</p><p>' + esc(m.story) + '</p>' +
+      '<h2>What is in it</h2><ul class="inside">' + m.inside.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>' +
+      '<h2>Goes well with</h2><div class="pairs">' + m.pair.map(function (pid) {
+        var p = byId(pid); if (!p) return '';
+        return '<a href="#dish-' + p.id + '">' + tile(p) + '<div><b>' + esc(p.name) + '</b><span>Rs ' + p.price + '</span></div></a>';
+      }).join('') + '</div>' +
+      '<p style="margin-top:34px;font-size:.95rem;color:var(--ink-soft)">Tell us about allergies when you order. We will always check with the kitchen.</p>' +
+      '<div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn solid" href="#contact">Find us</a><a class="btn" href="#menu">Back to menu</a></div>' +
+      '</div></article>' +
+      '<div class="pn"><a href="#dish-' + prev.id + '"><small>Previous</small><b>' + esc(prev.name) + '</b></a><a class="r" href="#dish-' + next.id + '"><small>Next</small><b>' + esc(next.name) + '</b></a></div></div>';
+    document.title = m.name + ' | ' + S.name;
+  }
+
+  /* router */
+  var titles = { home: 'Bakulahar Chulo | Modern Nepali food in Chitwan', menu: 'Menu | Bakulahar Chulo', about: 'Our Story | Bakulahar Chulo', gallery: 'Gallery | Bakulahar Chulo', contact: 'Find Us | Bakulahar Chulo' };
+  function route() {
+    var h = (location.hash || '#home').slice(1), view = h;
+    if (h.indexOf('dish-') === 0) { renderItem(h.slice(5)); view = 'item'; }
+    else { if (!titles[h]) view = 'home'; document.title = titles[view]; }
+    document.querySelectorAll('.view').forEach(function (v) { v.classList.toggle('show', v.id === 'v-' + view); });
+    var navKey = view === 'item' ? 'menu' : view;
+    document.querySelectorAll('.nav a[href^="#"]').forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + navKey); });
+    document.querySelector('.nav').classList.remove('open');
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script></body></html>
