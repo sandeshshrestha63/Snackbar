@@ -13,9 +13,9 @@ window.SITE = {
   tagline: "Eat, drink, and be merry.",
   phone: "+977 981-627-8967",
   phoneRaw: "+9779816278967",
-  email: "", // TODO: no email found on Instagram - add one if you have it
-  address: [], // TODO: no address found on Instagram - add one here, e.g. ["Street", "City, Nepal"]
-  mapQuery: "", // TODO: fill in once you have a real address, e.g. "Snacks Bar, City, Nepal"
+  email: "snacksbar08@gmail.com",
+  address: ["Saptagandaki Chowk", "Bharatpur, Nepal"],
+  mapQuery: "Snacks Bar, Saptagandaki Chowk, Bharatpur, Nepal",
   mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.1906675903715!2d84.43377079999999!3d27.685613500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fba247abcf79%3A0x231c1ffbcd075aaf!2sSnacks%20Bar!5e1!3m2!1sen!2snp!4v1793528429001!5m2!1sen!2snp",
   hours: [
     ["Every day", "8:30 am to 9:00 pm"]

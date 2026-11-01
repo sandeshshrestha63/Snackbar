@@ -4,6 +4,12 @@
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
+  var ICON_INSTAGRAM = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></svg>';
+  var ICON_FACEBOOK = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M13 3h4a1 1 0 0 1 1 1v3h-3c-1.1 0-2 .9-2 2v2h4l-.6 4H13v7h-4v-7H6v-4h3v-3c0-2.76 2.24-5 5-5z"/></svg>';
+  var ICON_LOCATION = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.33-7-11a7 7 0 1 1 14 0c0 5.67-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+  var ICON_PHONE = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.7 3.6.7.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.3 2.5.7 3.6.1.3 0 .7-.2 1l-2.4 2.2z"/></svg>';
+  var ICON_EMAIL = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+
   /* a picture tile: real photo if item.img exists, otherwise a coloured placeholder with a glyph */
   window.tile = function (o, cls, caption) {
     return '<div class="tile tone-' + (o.tone || 'terra') + ' ' + (cls || '') + '">' +
@@ -33,10 +39,11 @@
   var foot = document.getElementById('site-foot');
   if (foot) foot.outerHTML =
     '<footer class="site-foot"><div class="wrap"><div class="cols">' +
-    '<div><h4>' + esc(S.name) + '</h4><p>' + esc(S.tagline) + '</p>' + (S.address.length ? '<p style="margin-top:14px">' + S.address.join('<br>') + '</p>' : '') + '</div>' +
+    '<div><h4>' + esc(S.name) + '</h4><p>' + esc(S.tagline) + '</p>' + (S.address.length ? '<p class="foot-addr" style="margin-top:14px">' + ICON_LOCATION + '<span>' + S.address.join('<br>') + '</span></p>' : '') + '</div>' +
     '<div><h4>Look around</h4><ul>' + links.map(function (l) { return '<li><a href="' + l[0] + '">' + l[1] + '</a></li>'; }).join('') + '</ul></div>' +
-    '<div><h4>Say hello</h4><ul><li><a href="tel:' + S.phoneRaw + '">' + esc(S.phone) + '</a></li>' + (S.email ? '<li><a href="mailto:' + S.email + '">' + esc(S.email) + '</a></li>' : '') +
-    '<li><a href="' + S.social.instagram + '">Instagram</a></li><li><a href="' + S.social.facebook + '">Facebook</a></li></ul></div>' +
+    '<div><h4>Say hello</h4><ul><li><a class="social-link" href="tel:' + S.phoneRaw + '">' + ICON_PHONE + ' ' + esc(S.phone) + '</a></li>' + (S.email ? '<li><a class="social-link" href="mailto:' + S.email + '">' + ICON_EMAIL + ' ' + esc(S.email) + '</a></li>' : '') +
+    '<li><a class="social-link" href="' + S.social.instagram + '" target="_blank" rel="noopener">' + ICON_INSTAGRAM + ' Instagram</a></li>' +
+    '<li><a class="social-link" href="' + S.social.facebook + '" target="_blank" rel="noopener">' + ICON_FACEBOOK + ' Facebook</a></li></ul></div>' +
     '</div><div class="fine"><span>&copy; ' + new Date().getFullYear() + ' ' + esc(S.name) + '</span></div></div></footer>';
 
   /* ---------- HOME ---------- */
