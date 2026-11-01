@@ -156,9 +156,13 @@ section.block { padding: 96px 0; }
 .menu-tabs .wrap { display: flex; gap: 8px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
 .menu-tabs a { white-space: nowrap; text-decoration: none; padding: 7px 16px; border: 1.5px solid var(--line); border-radius: 40px; font-weight: 500; font-size: .93rem; }
 .menu-tabs a:hover, .menu-tabs a.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.menu-tabs a.grp-start { margin-left: 14px; padding-left: 20px; border-left: 1.5px solid var(--line); }
+.menu-group-head { padding-top: 56px; }
+.menu-group:first-child .menu-group-head { padding-top: 28px; }
+.menu-group:not(:first-child) .menu-group-head { border-top: 1px solid var(--line); margin-top: 24px; }
 .menu-cat { padding: 64px 0 10px; scroll-margin-top: 140px; }
 .menu-cat > .wrap { display: grid; grid-template-columns: 240px 1fr; gap: 56px; }
-.menu-cat h2 { font-size: 2.2rem; }
+.menu-cat h3 { font-size: 2.2rem; }
 .menu-cat .np { font-family: var(--deva); color: var(--terra); font-size: 1.2rem; margin-top: 6px; }
 .dish { display: flex; align-items: baseline; gap: 10px; text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .dish:first-child { padding-top: 0; }

@@ -42,7 +42,7 @@
   /* ---------- HOME ---------- */
   var picks = document.getElementById('picks');
   if (picks) {
-    picks.innerHTML = ['coffee', 'corn-dog', 'virgin-mojito'].map(function (id) {
+    picks.innerHTML = ['momo-open', 'corn-dog', 'blended-blueberries-smoothie'].map(function (id) {
       var m = byId(id);
       return '<a class="pick" href="item.html?id=' + m.id + '">' + tile(m) +
         '<h3>' + esc(m.name) + '<small>' + priceLabel(m) + '</small></h3><p>' + esc(m.desc) + '</p></a>';
@@ -52,6 +52,13 @@
   if (strip) {
     var words = MENU.map(function (m) { return '<span>' + esc(m.glyph) + '</span>'; }).join('');
     strip.innerHTML = '<div>' + words + words + '</div>';
+    /* animation-duration in CSS is fixed, but the menu's length isn't -
+       scale the duration to the actual content width so the scroll speed
+       stays constant no matter how many items are in the menu */
+    var track = strip.querySelector('div');
+    var pxPerSecond = 70;
+    var duration = Math.max(20, Math.min(90, (track.scrollWidth / 2) / pxPerSecond));
+    track.style.animationDuration = duration + 's';
   }
   var hours = document.querySelectorAll('[data-hours]');
   hours.forEach(function (el) {
@@ -61,15 +68,33 @@
   /* ---------- MENU ---------- */
   var menuRoot = document.getElementById('menu-root');
   if (menuRoot) {
+    var GROUPS = [
+      { id: 'menu', label: 'Menu', eyebrow: 'To eat' },
+      { id: 'drinks', label: 'Drinks', eyebrow: 'To drink' }
+    ];
+    var catsByGroup = function (gid) { return CATS.filter(function (c) { return (c.group || 'menu') === gid; }); };
+
     var tabs = document.getElementById('menu-tabs');
-    tabs.innerHTML = '<div class="wrap">' + CATS.map(function (c) { return '<a href="#' + c.id + '">' + c.name + '</a>'; }).join('') + '</div>';
-    menuRoot.innerHTML = CATS.map(function (c) {
-      var items = MENU.filter(function (m) { return m.cat === c.id; }).map(function (m) {
-        return '<a class="dish-item" href="item.html?id=' + m.id + '"><div class="row"><span class="nm">' + esc(m.name) +
-          '</span><span class="lead-dots"></span><span class="pr">' + priceLabel(m) + '</span></div><p>' + esc(m.desc) + ' <span class="more">See details</span></p></a>';
+    tabs.innerHTML = '<div class="wrap">' + GROUPS.map(function (g, gi) {
+      return catsByGroup(g.id).map(function (c, ci) {
+        var cls = (gi > 0 && ci === 0) ? ' class="grp-start"' : '';
+        return '<a href="#' + c.id + '"' + cls + '>' + c.name + '</a>';
       }).join('');
-      return '<section class="menu-cat" id="' + c.id + '"><div class="wrap"><div><h2>' + c.name + '</h2><div class="np">' + esc(c.tagline || '') + '</div></div><div>' + items + '</div></div></section>';
+    }).join('') + '</div>';
+
+    menuRoot.innerHTML = GROUPS.map(function (g) {
+      var cats = catsByGroup(g.id);
+      if (!cats.length) return '';
+      var catsHtml = cats.map(function (c) {
+        var items = MENU.filter(function (m) { return m.cat === c.id; }).map(function (m) {
+          return '<a class="dish-item" href="item.html?id=' + m.id + '"><div class="row"><span class="nm">' + esc(m.name) +
+            '</span><span class="lead-dots"></span><span class="pr">' + priceLabel(m) + '</span></div><p>' + esc(m.desc) + ' <span class="more">See details</span></p></a>';
+        }).join('');
+        return '<section class="menu-cat" id="' + c.id + '"><div class="wrap"><div><h3>' + c.name + '</h3><div class="np">' + esc(c.tagline || '') + '</div></div><div>' + items + '</div></div></section>';
+      }).join('');
+      return '<div class="menu-group" id="group-' + g.id + '"><div class="wrap menu-group-head"><span class="eyebrow">' + g.eyebrow + '</span><h2>' + g.label + '</h2></div>' + catsHtml + '</div>';
     }).join('');
+
     var as = tabs.querySelectorAll('a');
     window.addEventListener('scroll', function () {
       var cur = CATS[0].id;
@@ -101,7 +126,9 @@
   /* ---------- CONTACT ---------- */
   var map = document.getElementById('map');
   if (map) {
-    if (S.mapQuery) {
+    if (S.mapEmbedSrc) {
+      map.innerHTML = '<iframe loading="lazy" title="Map" src="' + S.mapEmbedSrc + '" style="border:0" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+    } else if (S.mapQuery) {
       map.innerHTML = '<iframe loading="lazy" title="Map" src="https://maps.google.com/maps?q=' + encodeURIComponent(S.mapQuery) + '&output=embed"></iframe>';
     } else {
       /* no confirmed address yet - point people to Instagram/phone instead of a broken or misleading map */
