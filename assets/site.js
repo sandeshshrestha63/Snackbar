@@ -22,7 +22,7 @@
 
   var links = [
     ['index.html', 'Home', 'home'], ['menu.html', 'Menu', 'menu'], ['about.html', 'Our Story', 'about'],
-    ['gallery.html', 'Gallery', 'gallery'], ['contact.html', 'Find Us', 'contact']
+    ['team.html', 'Our Team', 'team'], ['gallery.html', 'Gallery', 'gallery'], ['contact.html', 'Find Us', 'contact']
   ];
   var nav = links.map(function (l) {
     var on = (page === l[2] || (page === 'item' && l[2] === 'menu')) ? ' class="on"' : '';

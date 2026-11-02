@@ -112,10 +112,13 @@ section.block { padding: 96px 0; }
 .visit { background: var(--green); color: var(--paper); }
 .visit .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
 .visit .eyebrow { color: var(--mustard); }
-.board { border: 2px solid rgba(242,233,216,.5); padding: 34px; border-radius: 4px; outline: 2px solid rgba(242,233,216,.25); outline-offset: 6px; }
-.board dl div { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px dashed rgba(242,233,216,.35); gap: 20px; }
+.board { border: 2px solid rgba(242,233,216,.5); padding: 34px; border-radius: 4px; outline: 2px solid rgba(242,233,216,.25); outline-offset: 6px; display: flex; flex-direction: column; justify-content: center; min-height: 220px; }
+.board dl div { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px dashed rgba(242,233,216,.35); gap: 20px; }
 .board dl div:last-child { border: 0; }
+.board dl div:only-child { padding: 20px 0; }
 .board dt { font-family: var(--serif); font-size: 1.15rem; }
+.board dl div:only-child dt { font-size: 1.35rem; }
+.board dl div:only-child dd { font-size: 1.35rem; font-weight: 700; color: var(--mustard); }
 .visit p { margin: 18px 0 28px; opacity: .88; max-width: 28em; }
 .visit .btn { border-color: var(--paper); color: var(--paper); }
 .visit .btn:hover { box-shadow: 3px 3px 0 var(--paper); }
@@ -222,6 +225,14 @@ section.block { padding: 96px 0; }
 .getting h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .getting p { color: var(--ink-soft); font-size: .98rem; }
 
+/* ---------- team ---------- */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px; }
+.team-card { text-align: center; }
+.team-card .tile { aspect-ratio: 4/5; border-radius: 4px; max-width: 220px; margin: 0 auto 18px; }
+.team-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.team-card .role { color: var(--terra); font-weight: 700; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 8px; }
+.team-card p { color: var(--ink-soft); font-size: .92rem; }
+
 /* ---------- item detail ---------- */
 .crumbs { padding: 28px 0 0; font-size: .9rem; color: var(--ink-soft); }
 .crumbs a { text-decoration: none; border-bottom: 1px solid var(--line); }
@@ -258,6 +269,7 @@ section.block { padding: 96px 0; }
   .stamp { left: 10px; }
   .menu-cat > .wrap { grid-template-columns: 1fr; gap: 20px; }
   .rules ol, .getting .cols { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
   .masonry { columns: 2; }
   .about-grid .tile, .item .tile { position: static; }
   .item .tile { aspect-ratio: auto; height: 220px; }
@@ -278,5 +290,6 @@ section.block { padding: 96px 0; }
   .pairs { grid-template-columns: 1fr; }
   .brand span { display: none; }
   .item .tile { height: 180px; }
+  .team-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .strip div { animation: none; } * { transition: none !important; } }
