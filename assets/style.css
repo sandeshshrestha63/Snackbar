@@ -144,7 +144,7 @@ section.block { padding: 96px 0; }
 /* ---------- about ---------- */
 .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; padding-block: 80px; align-items: start; }
 .about-grid .tile { aspect-ratio: 4/5; border-radius: 4px; position: sticky; top: 110px; }
-.about-grid .tile.b { aspect-ratio: 16/10; position: static; margin-top: 30px; border-radius: 4px 4px 80px 4px; }
+.about-grid .tile.b { aspect-ratio: 16/10; position: static; margin-top: 30px; border-radius: 4px 4px 4px 4px; }
 .prose p { margin-bottom: 20px; max-width: 36em; }
 .prose p:first-of-type::first-letter { font-family: var(--serif); font-weight: 700; font-size: 4.4rem; float: left; line-height: .8; padding: 8px 12px 0 0; color: var(--terra); }
 .rules { background: var(--paper-2); border-block: 1px solid var(--line); padding: 84px 0; }
